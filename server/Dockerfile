@@ -54,7 +54,7 @@ ENV DEFAULT_CATTLE_CATALOG_URL='{"catalogs":{"community":{"url":"https://git.ran
 EXPOSE 3306
 ENV CATTLE_CATTLE_VERSION v0.177.8
 #ADD https://github.com/rancherio/cattle/releases/download/${CATTLE_CATTLE_VERSION}/cattle.jar /usr/share/cattle/
-ADD https://github.com/Cerfoglg/cattle/raw/master/dist/artifacts/cattle.jar /usr/share/cattle/
+ADD https://github.com/Cerfoglg/cattle/releases/download/fiware-1.0/cattle.jar /usr/share/cattle/
 
 RUN cd / && for i in $(ls /s6-statics/*static.tar.gz);do tar -zxvf $i;done && rm -rf /s6-statics/*static.tar.gz && \
     mkdir -p $CATTLE_HOME && \
